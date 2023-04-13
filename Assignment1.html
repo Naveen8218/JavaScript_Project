@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="assignment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Assignment1.css">
+
+
+    <title>Assignment1</title>
+</head>
+
+<body>
+
+    <div class="container col-10 mt-5" id="abc">
+
+
+        <div class="my-5 violett">
+
+            <div class="step d-flex justify-content-between align-items-center flex-row col-12 my-4 pt-5 text-white">
+                <div class=" d-flex flex-column">
+                    <button class=" btnn ml-5 mb-1" id="step1" onclick="personalDetails()">1</button>
+                    <small>PERSONAL DETAILS</small>
+                </div>
+
+                <div class=" d-flex flex-column">
+                    <button class="btnn ml-5 mb-1" id="step2" onclick="socialProfiles()">2</button>
+                    <small>SOCIAL PROFILES</small>
+                </div>
+
+                <div class=" d-flex flex-column">
+                    <button class="btnn ml-5 mb-1" id="step3" onclick="accountSetup()">3</button>
+                    <small>ACCOUNT SETUP</small>
+                </div>
+
+            </div>
+            <div class="row align-items-center justify-content-center text-white">
+
+
+                <div class="form-group col-8 mt-2 mb-4 justify-content-center whitee text-dark" id="form1">
+                    <!--  -->
+
+                    <!--  -->
+                    <div class="text-center mt-5">
+                        <h5>PERSONAL DETAILS</h5>
+                        <p>Tell us something more about you</p>
+                    </div>
+
+
+                    <div class="form-group col-md-12 my-4 mx-auto">
+                        <div class=" py-2"> <input onblur=" blurName()" type="text" name="name"
+                                class=" col-11 look rounded-0" id="name" placeholder="First Name"><span
+                                class=" text-danger pl-2">*</span> </div>
+                        <span class="text-danger" id="iname"></span>
+                    </div>
+
+                    <div class="form-group col-md-12 my-4 mx-auto">
+                        <div class=" py-2"> <input onblur="blurLname()" type="text" name="lname"
+                                class=" col-11 look rounded-0" id="lname" placeholder="Last Name"><span
+                                class=" text-danger pl-2">*</span> </div>
+                        <span class="text-danger" id="ilname"></span>
+                    </div>
+
+
+                    <div class="form-group col-md-12 my-4 mx-auto">
+                        <div class=" py-2"><input onblur="blurPhone()" type="number" name="phone"
+                                class=" col-11 look rounded-0" id="phone" placeholder="phone"><span
+                                class=" text-danger pl-2">*</span> </div>
+                        <span class="text-danger" id="iphone"></span>
+                    </div>
+
+                    <div class="justify-content-center  col-md-12 mt-5  text-center ">
+                        <button class="btn pinkc rounded-pill mx-2 px-4 mb-4" id="next1"
+                            onclick="nextSocial(); validatePersonalDetails()">Next</button>
+                    </div>
+
+
+                </div>
+
+                <!-- second part Started -->
+                <div o class="form-group col-8 whitee text-dark mt-2 mb-4 justify-content-center" id="form2">
+
+                    <div class="text-center mt-5">
+                        <h5>SOCIAL PROFILES</h5>
+                        <p>Your presence on the social network</p>
+                    </div>
+
+
+                    <div class="form-group col-md-12 my-4 mx-auto">
+                        <div class=" py-2"><input type="text" name="twitter" class=" col-11 look rounded-0" id="twitter"
+                                placeholder="Twitter"><span class=" text-danger pl-2"> </span> </div>
+                        <span class="text-danger" id="itwitter"></span>
+                    </div>
+
+
+                    <div class="form-group col-md-12 my-4 mx-auto">
+                        <div class=" py-2"> <input onblur="blurfacebook(); facebookCheck();" type="text" name="facebook"
+                                class="col-11 look rounded-0" id="facebook" placeholder="Facebook"><span
+                                class=" text-danger pl-2">*</span> </div>
+                        <span class="text-danger" id="ifacebook"></span>
+                    </div>
+
+
+                    <div class="form-group col-md-12 my-4 mx-auto">
+                        <div class=" py-2"><input type="text" name="googleplus" class=" col-11 look rounded-0"
+                                id="googleplus" placeholder="Google Plus"><span class=" text-danger pl-2"> </span>
+                        </div>
+                        <span class="text-danger" id="igoogleplus"></span>
+                    </div>
+
+                    <div class="justify-content-center  col-md-12 mt-5  text-center mb-4 ">
+                        <button class="btn vlight  rounded-pill mx-2 " id="previous"
+                            onclick="prevPersonalDetails()">Previous</button>
+                        <button class="btn pinkc rounded-pill mx-2 px-4 " id="next2"
+                            onclick="nextAccount(); validateSocialProfile();">Next</button>
+                    </div>
+
+
+                </div>
+                <!-- second part End -->
+
+
+
+                <!-- Third part Started -->
+                <div class="form-group col-8 whitee text-dark mt-2 mb-4 justify-content-center" id="form3">
+
+                    <div class="text-center  mt-5">
+                        <h5>CREATE YOUR ACCOUNT</h5>
+                        <p>Fill in your credentials</p>
+                    </div>
+
+
+
+                    <div class="form-group col-md-12 my-4 mx-auto">
+                        <div class=" py-2"><input onblur="blurEmail()" type="text" name="email"
+                                class="col-11 look rounded-0" id="email" placeholder="Email"><span
+                                class=" text-danger pl-2">*</span> </div>
+                        <span class="text-danger" id="iemail"></span>
+                    </div>
+
+                    <div class="form-group col-md-12 my-4 mx-auto">
+                        <div class=" py-2"><input onblur="blurPassword()" type="password" name="password"
+                                class="col-11 look rounded-0" id="password" placeholder="Password"><span
+                                class=" text-danger pl-2">*</span> </div>
+                        <span class="text-danger" id="ipassword"></span>
+                    </div>
+
+
+
+                    <div class="form-group col-md-12 my-4 mx-auto">
+                        <div class=" py-2"><input onblur="blurCPassword()" type="password" name="Cpassword"
+                                class="col-11 look rounded-0" id="Cpassword" placeholder="Confirm Password"><span
+                                class=" text-danger pl-2">*</span> </div>
+                        <span class="text-danger" id="iCpassword"></span>
+                    </div>
+
+                    <div class="justify-content-center  col-md-12 mt-5  text-center mb-4 ">
+                        <button class="btn vlight rounded-pill mx-2 " id="previous"
+                            onclick="prevSocialProfiles()">Previous</button>
+                        <button class="btn pinkc rounded-pill mx-2 px-4 " id="Submit"
+                            onclick="AddData();">Submit</button>
+                        <button class="btn  btn-success mx-auto rounded-pill my-2 mx-2 px-3 "
+                            id="update">Update</button>
+
+                    </div>
+
+
+                </div>
+                <!-- Third part End -->
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row align-items-center" mt-5>
+            <div class="col-12 mt-3 text-center">
+                <table class="table table-bordered table-hover" id="crudTable">
+                    <thead class="table-success">
+                        <tr>
+                            <th>First Name</th>
+
+                            <th>Last Name</th>
+
+                            <th>Phone</th>
+
+                            <th>Twitter</th>
+                            <th>Facebook</th>
+                            <th>Google+</th>
+
+                            <th>Email</th>
+                            <th>Password</th>
+
+                            <th>Confirm Password</th>
+
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="as.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
